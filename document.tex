@@ -146,37 +146,36 @@ Etap ten był uczeniem nienadzorowanym. Następnie autor zastosował kolejny ucz
 \subsection{AlphaGO}
 Do~bardziej zaawansowanych Sztucznych Inteligencji należy projekt ,,AlphaGo''\cite{AlphaGO} stworzony przez~firmę Google~DeepMind. Owa~Sztuczna Inteligencja nauczyła się~grać w~starochińską grę planszową~-~Go. Mechanizm wyróżnia to,~że~może być wykorzystany do~różnych celów (np.~może nauczyć się~grać w~inne gry) i~nie~był tworzony pod~z~góry określone zastosowanie, w~przeciwieństwie do~mechanizmów takich jak: IBM~Watson czy~IBM~Deep~Blue. Silnik stworzony przez~firmę~---~DeepMind~---~jako~dane wejściowe przyjmuje obraz w~postaci mapy bitowej, a~następnie do~jego przetwarzania wykorzystuje głębokie splotowe sieci neuronowe (opisane w~dalszej części artykułu) oraz Q-learning (szczególny rodzaj uczenia ze~wzmocnieniem).
 
-Program AlphaGo jest przełomowy również pod~innym względem: jest pierwszą Sztuczną Inteligencją, która~pokonała profesjonalnego gracza w~Go \cite{FanHuiGO} na~pełnowymiarowej planszy (19x19) bez~zastosowania tzw.~handicapu. Pojedynek odbył się~w~październiku~2015 roku. Niedługo potem, w~marcu~2016 roku, AlphaGo zdołał pokonać, 18-krotnego i~również ówczesnego mistrza świata w~grę~Go \cite{LeeSedolGO}. Tym~samym ostatnia z~popularnych gier planszowych straciła mistrza ludzkiego na~rzecz programu komputerowego (podobnie jak~wcześniej warcaby\cite{checkersSolved} czy~szachy\cite{newborn1997kasparov}).
+Program AlphaGo jest przełomowy również pod~innym względem: jest pierwszą Sztuczną Inteligencją, która~pokonała profesjonalnego gracza w~Go \cite{FanHuiGO} na~pełnowymiarowej planszy (19x19) bez~zastosowania tzw.~handicapu. Pojedynek odbył się~w~październiku~2015 roku. Niedługo potem, w~marcu~2016 roku, AlphaGo zdołał pokonać, 18-krotnego i~również ówczesnego mistrza świata w~grę~Go \cite{LeeSedolGO}.
+
+Tym~samym ostatnia z~popularnych gier planszowych straciła mistrza ludzkiego na~rzecz programu komputerowego (podobnie jak~wcześniej warcaby\cite{checkersSolved} czy~szachy\cite{newborn1997kasparov}).
 
 \section{Sieci neuronowe}
-Jednym z~mechanizmów, który jest najczęściej wykorzystywany do~implementacji Sztucznej Inteligencji, jest sztuczna sieć neuronowa. Jest ona~inspirowana sieciami neuronowymi występującymi w~biologii (np.~w~ludzkim organizmie, w~szczególności: w~mózgu). Na~strukturę sieci składają się~pojedyncze połączone ze~sobą elementy, zwane neuronami. Budowa neuronu została przedstawiona na~rysunku \ref{fig:hebb-neuron}. Neurony najczęściej łączone są~w~tzw.~sieci warstwowe. Przykładowa sieć warstwowa została zaprezentowana na~rysunku \ref{fig:feed-forward-net}. Jeśli liczba warstw występujących w~danej sieci jest dostatecznie duża (zazwyczaj: około 10~warstw lub~więcej), sieć określana jest jako~głęboka.
-
-\begin{minipage}{\linewidth}
-Algorytm inferencji takiej sieci przedstawia się~następująco:
-\begin{compactenum}
-	\item Pobierz dane wejściowe, które są~wektorem: $\overline{X}=[x_1, x_2, ..., x_n]$.
-	\item Pomnóż każdą współrzędną wektora wejściowego przez~odpowiadającą mu~wagę (określaną w~procesie uczenia sieci) i~zsumuj ze~sobą otrzymane wartości: $net = \sum\limits_{i=0}^{n} w_i x_i$.
-	\item Do~otrzymanego wyniku dodaj czynnik $b$ zwany przesunięciem (\textit{ang.~bias}): $net := net + b$.
-	\item Otrzymaną sumę poddaj działaniu funkcji $\sigma$ zwanej funkcją aktywacji: \mbox{$o=\sigma(net)$}. Wynik tej operacji jest wartością wyjściową neuronu.
-\end{compactenum}
-\vspace{-0.2cm}
+Jednym z~mechanizmów, który jest najczęściej wykorzystywany do~implementacji Sztucznej Inteligencji, jest sztuczna sieć neuronowa. Jest ona~inspirowana sieciami neuronowymi występującymi w~biologii (np.~w~ludzkim organizmie, w~szczególności: w~mózgu). Na~strukturę sieci składają się~pojedyncze połączone ze~sobą elementy, zwane neuronami. Budowa neuronu została przedstawiona na~rysunku \ref{fig:hebb-neuron}.
 \begin{figure}[H]
 	\includegraphics[width=0.9\linewidth, keepaspectratio]{img/sigmoid-neuron.png}
 	\vspace{-2mm}
 	\caption{Neuron Hebba.}
 	\label{fig:hebb-neuron}
 \end{figure}
-\vfill
-\end{minipage}
-\vspace{-0.6cm}
+
+Neurony najczęściej łączone są~w~tzw.~sieci warstwowe. Przykładowa sieć warstwowa została zaprezentowana na~rysunku \ref{fig:feed-forward-net}. Jeśli liczba warstw występujących w~danej sieci jest dostatecznie duża (zazwyczaj: około 10~warstw lub~więcej), sieć określana jest jako~głęboka.
+
+Algorytm, który pozwala otrzymać wartość wyjściową dla~neuronu, przedstawia się~następująco:
+\begin{compactenum}
+	\item Pobierz dane wejściowe, które są~wektorem: $\overline{X}=[x_1, x_2, ..., x_n]$.
+	\item Pomnóż każdą współrzędną wektora wejściowego przez~odpowiadającą mu~wagę (określaną w~procesie uczenia sieci) i~zsumuj ze~sobą otrzymane wartości: $net = \sum\limits_{i=0}^{n} w_i x_i$.
+	\item Do~otrzymanego wyniku dodaj czynnik $b$ zwany przesunięciem (\textit{ang.~bias}): $net := net + b$.
+	\item Otrzymaną sumę poddaj działaniu funkcji $\sigma$ zwanej funkcją aktywacji: \mbox{$o=\sigma(net)$}. Wynik tej operacji jest wartością wyjściową neuronu.
+\end{compactenum}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{img/feed_forward_neural_network.png}
-	\vspace{-3mm}
+	\vspace{-8mm}
 	\caption{Warstwowa sieć neuronowa typu Feed-Forward. Źródło: \cite{feed-forward-net-source}}
 	\label{fig:feed-forward-net}
 \end{figure}
-
+\vspace{-5mm}
 \section{Splotowe sieci neuronowe}
 Szczególnym przypadkiem sieci neuronowych są~sieci splotowe. Wykorzystują one operację splotu w~postaci dyskretnej:
 \begin{align*}
@@ -184,7 +183,7 @@ Szczególnym przypadkiem sieci neuronowych są~sieci splotowe. Wykorzystują one
 =\sum\limits_{m=-\infty}^{+\infty}f[n-m]g[m]
 \end{align*}
 
-Dzięki stosowaniu różnych masek (funkcji splatanych z~przetwarzanym obrazem) w~filtrach splotowych można uzyskiwać różne efekty. Istnieje wiele zdefiniowanych funkcji tego typu, które służą m.in.~do:
+Dzięki stosowaniu różnych masek (funkcji splatanych z~przetwarzanym sygnałem, np.~obrazem) w~filtrach splotowych można uzyskiwać różne efekty. Istnieje wiele zdefiniowanych funkcji tego typu, które służą m.in.~do:
 \begin{compactitem}
 	\item redukcji szumów,
 	\item wyostrzania,
@@ -196,7 +195,6 @@ Sieci splotowe wykorzystują to,~że~odpowiednio dobierając wartości maski, mo
 Standardowym zadaniem, do~którego wykorzystywane są~splotowe sieci neuronowe, jest identyfikacja obiektu obecnego na~zdjęciu. Algorytm przetwarzania obrazu dzieli się~na~etapy:
 \begin{compactenum}
 	\item Splot~-~zastosowanie $n$~różnych filtrów splotowych, wynikiem czego jest $n$~obrazków zwanych mapami cech.
-	\item Normalizację (krok opcjonalny).
 	\item Próbkowanie (zmniejszenie rozmiarów powstałych map cech, m.in.~w~celu redukcji rozmiaru przetwarzanych danych).
 	\item Powtórzenie kroków 1-3 wiele razy (liczba powtórzeń jest zależna od~liczby warstw w~sieci).
 	\item Przekazanie powstałych map cech do~warstwy neuronów w~pełni połączonej (każdy piksel trafia do~wszystkich neuronów tej warstwy sieci).
