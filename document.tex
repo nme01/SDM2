@@ -34,7 +34,7 @@
 \usepackage{multicol} % Used for the two-column layout of the document
 \usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
 \usepackage{booktabs} % Horizontal rules in tables
-\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+\usepackage{float} % Required for tables and figures in the multi-column environment
 \usepackage{hyperref} % For hyperlinks in the PDF
 
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
@@ -43,8 +43,11 @@
 \usepackage{titlesec} % Allows customization of titles
 \usepackage[labelsep=period,font=small,format=plain,labelfont=bf,textfont=up]{caption}
 
-\titleformat{\section}[runin]{\bfseries\centering}{\thesection.}{3pt}{} % Change the look of the section titles
-\titleformat{\subsection}[runin]{\bfseries}{\thesubsection.}{3pt}{} % Change the look of the section titles
+\newcommand{\addperiod}[1]{#1.}
+
+%\titleformat{command}[shape]{format}{label}{sep}{before-code}{after-code}
+\titleformat{\section}[runin]{\bfseries\centering}{\thesection.}{3pt}{\addperiod} % Change the look of the section titles
+\titleformat{\subsection}[runin]{\bfseries}{\thesubsection.}{3pt}{\addperiod} % Change the look of the section titles
 \titlespacing*{\section}{0pt}{6pt}{3pt}[0pt]
 \titlespacing*{\subsection}{0pt}{3pt}{3pt}[0pt]
 
@@ -86,20 +89,20 @@
 \begin{multicols}{2} % Two-column layout throughout the main article text
 
 %\begin{abstract}
-\section*{Streszczenie.}
+\section*{Streszczenie}
 
 \textit{
 W~artykule zwrócono uwagę na~dynamiczny rozwój Sztucznej~Inteligencji w~ostatnich czasach. Następnie objaśniono różnice pomiędzy uczeniem nadzorowanym i~nienadzorowanym oraz zaprezentowano przykładowe zastosowania Uczenia Maszynowego we~współczesnym świecie. Omówiono również temat sztucznych sieci neuronowych: ich~budowę oraz zasadę działania. Następnie wyjaśniono czym jest uczenie głębokie. Kolejno, zaprezentowano szczególny przypadek sieci neuronowej, jakim jest sieć splotowa. Wyjaśniono, w jaki sposób jest ona wykorzystywana do~rozpoznawania obiektów znajdujących się~na~obrazach. Zaznaczono również, że~zagadnienie to jest tematem pracy magisterskiej autora tego artykułu.
 }
 
-\section{Motywacja.}
+\section{Motywacja}
 Ostatnimi czasy Sztuczna Inteligencja jest wykorzystywana w~coraz większej liczbie obszarów. Zaczyna ona być obecna nawet w~urządzeniach codziennego użytku. Szybki rozwój Uczenia Maszynowego, czyli dziedziny zajmującej się badaniem Sztucznej Inteligencji, stał się~możliwy dzięki osiągnięciu znacznych mocy obliczeniowych komputerów. Pozwoliło to~na~stosowanie zaawansowanych algorytmów, które kiedyś były jedynie przedmiotem rozważań teoretycznych.
 
 Biorąc pod~uwagę to,~że Sztuczna Inteligencja może być stosowana w~prawie każdej dziedzinie nauki, warto zgłębić wiedzę na~temat najnowszych osiągnięć związanych z~Uczeniem Maszynowym. W~przeciągu ostatnich 5~lat wyjątkowo szybko rozwijały się~algorytmy służące do~rozpoznawania obrazów. Prawdopodobnie było to spowodowane tym, że~jest to~obszar, w~którym można znaleźć wiele zastosowań dla~Sztucznej Inteligencji.
 
 Jednym z~mechanizmów najczęściej wykorzystywanych do~rozpoznawania obrazów oraz materiałów wideo jest tzw.~sieć splotowa, która zostanie dokładniej omówiona w~dalszej części artykułu.
 
-\section{Uczenie nadzorowane i nienadzorowane.}
+\section{Uczenie nadzorowane i nienadzorowane}
 Mechanizmy Sztucznej Inteligencji można podzielić na:
 \begin{compactitem}
 	\item uczenie nadzorowane,
@@ -113,7 +116,7 @@ W~\textbf{uczeniu nienadzorowanym} w~procesie uczenia dostarczane są~jedynie da
 
 Oba rodzaje uczenia mogą być łączone. W~ten sposób działa również mózg człowieka. By~zobrazować omawiane podejście, warto posłużyć się~przykładem. Wyobraźmy sobie, że~ktoś chce nas nauczyć rozpoznawać różne rodzaje jabłek. Najprostszym podejściem byłoby pokazywanie nam wielu jabłek wraz z~opisem wskazującym jakiego rodzaju jest każde z~nich. Byłoby to~jednak bardzo czasochłonne, gdyż~zaprezentowanie każdego jabłka wymagałoby przygotowania dla~niego odpowiedniego opisu. Łatwiejszym sposobem byłoby zamknięcie nas w~pokoju z~wieloma nieopisanymi jabłkami. Wówczas zaczęlibyśmy oglądać każde z~nich i~po~pewnym czasie zauważylibyśmy różne cechy powtarzające się~na~niektórych jabłkach (np.~podłużny kształt, czerwony kolor, zielony kolor, zielone plamki itp.). Po~wyjściu z~pokoju potrafilibyśmy identyfikować cechy występujące w~różnych grupach jabłek. Wiedza ta~pozwoliłaby nam na~nauczenie się~rozpoznawania różnych gatunków na~podstawie mniejszej liczby opisanych przykładów niż~przy~podejściu naiwnym, gdzie od~początku stosowane jest uczenie nadzorowane.
 
-\section{Przykłady zastosowań.}
+\section{Przykłady zastosowań}
 By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój Uczenia Maszynowego, warto poznać zastosowania, jakie~znajduje ta~dziedzina już teraz. Jednym z~nich jest zastosowanie Splotowej~Sieci~Neuronowej (\textit{\mbox{ang.~Convolutional} Neural Network, CNN}) do~oceniania atrakcyjności zdjęć ,,selfie'' \cite{SelfieCNN}. Autor algorytmu, potencjalnie bardzo przydatnego dla~wszystkich miłośników autofotografii, to~Andrej Karpathy. W~omawianym projekcie autor:
 \begin{compactenum}
 	\item Wykorzystał zdjęcia, które oznaczone były hasz-tagiem ,,selfie'' (znalazł około 5 milionów takich zdjęć).
@@ -141,7 +144,7 @@ Do~bardziej przełomowych Sztucznych Inteligencji należy projekt ,,AlphaGo''\ci
 
 Program AlphaGo jest przełomowy również pod~innym względem: jest pierwszą Sztuczną Inteligencją, która~pokonała profesjonalnego gracza w~Go (Fana Hui, mistrza Europy)\cite{FanHuiGO} na~pełnowymiarowej planszy (19x19) bez~zastosowania tzw.~handicapu. Pojedynek odbył się~w~październiku~2015 roku i~zakończył się~wynikiem 5:0. Niedługo potem, w~marcu~2016 roku, AlphaGo zdołał pokonać Lee Sedola\cite{LeeSedolGO}, 18-krotnego i~również ówczesnego mistrza świata w~grę~Go. Tym~samym ostatnia z~popularnych gier planszowych straciła mistrza ludzkiego na~rzecz programu komputerowego (podobnie jak~wcześniej warcaby\cite{checkersSolved} czy~szachy\cite{newborn1997kasparov}).
 
-\section{Sieci neuronowe.}
+\section{Sieci neuronowe}
 Jednym z~mechanizmów, który jest najczęściej wykorzystywany do~implementacji Sztucznej Inteligencji, jest sztuczna sieć neuronowa. Jest ona~inspirowana sieciami neuronowymi występującymi w~biologii (np.~w~ludzkim organizmie, w~szczególności: w~mózgu). Na~strukturę sieci składają się~pojedyncze połączone ze~sobą elementy, zwane neuronami. Budowa neuronu została przedstawiona na~rysunku \ref{fig:hebb-neuron}. Neurony najczęściej łączone są~w~tzw.~sieci warstwowe. Przykładowa sieć warstwowa została zaprezentowana na~rysunku \ref{fig:feed-forward-net}. Jeśli liczba warstw występujących w~danej sieci jest dostatecznie duża (zazwyczaj: około 10~warstw lub~więcej), sieć określana jest jako~głęboka.
 
 \begin{minipage}{\linewidth}
@@ -170,7 +173,7 @@ Algorytm inferencji takiej sieci przedstawia się~następująco:
 	\label{fig:feed-forward-net}
 \end{figure}
 
-\section{Splotowe sieci neuronowe.}
+\section{Splotowe sieci neuronowe}
 Szczególnym przypadkiem sieci neuronowych są~sieci splotowe. Wykorzystują one operację splotu w~postaci dyskretnej:
 \begin{align*}
 (f \ast g)[n] = \sum\limits_{m=-\infty}^{+\infty}f[m]g[n-m]\\
@@ -198,7 +201,7 @@ Standardowym zadaniem, do~którego wykorzystywane są~splotowe sieci neuronowe, 
 
 Ostatnia warstwa ma~za~zadanie przedstawić na~swoim wyjściu prawdopodobieństwa występowania różnych etykiet (np.~kot:~50\%, pies:~20\%, samochód:~5\%, ...).
 
-\section{Podsumowanie.}
+\section{Podsumowanie}
 Z~powodu gwałtownego wzrostu mocy obliczeniowej w~ciągu ostatnich 10~lat znacząco zwiększyły się~możliwości mechanizmów wykorzystujących Sztuczną Inteligencję. Wciąż rośnie liczba obszarów, w~których Uczenie Maszynowe znajduje zastosowania: od~automatycznych tłumaczeń tekstów, poprzez samosterujące się~pojazdy, gry planszowe oraz komputerowe, medycynę, aż~do~wszelkiego rodzaju zagadnień związanych z~obróbką obrazów czy~materiałów wideo. Ostatnie~z~wymienionych zastosowań (przetwarzanie materiałów graficznych oraz audio-wizualnych) szczególnie często wykorzystuje głębokie sieci splotowe, czyli specyficzny rodzaj sieci neuronowych, składających się~z~wielu warstw, wykorzystujących filtry splotowe do~osiągania założonych celów (np.~identyfikacji obiektów znajdujących się~na~zdjęciach czy~wręcz tworzenia opisów tych obrazów w~języku naturalnym).
 
 Z~powodu mnogości istniejących zastosowań dla~sieci splotowych oraz potencjalnie wielu dziedzin wciąż czekających na~wsparcie ze~strony mechanizmów tego rodzaju, warto zgłębić tę~szczególną gałąź Uczenia Maszynowego. Zadaniem referencyjnym, które jest często wykorzystywane do~badań nad~sieciami splotowymi jest identyfikacja przedmiotów przedstawionych na~obrazkach. Istnieją również bazy opisanych etykietami zdjęć takie jak CIFAR-10 i CIFAR-100\cite{cifar10and100} czy~ImageNet\cite{imagenet}, które mogą posłużyć jako~zbiór danych treningowych i~testowych. W~ramach swojej pracy magisterskiej stworzyłem głęboką splotową sieć neuronową realizującą wymienione zadanie referencyjne. Ze~względu na~niewielką moc obliczeniową urządzeń, z~których mogłem korzystać, posłużyłem się~bazą CIFAR-10.
