@@ -52,6 +52,8 @@
 \usepackage{titlesec} % Allows customization of titles
 \usepackage[labelsep=period,font=small,format=plain,labelfont=bf,textfont=up]{caption}
 
+\usepackage{bibspacing}
+\setlength{\bibitemsep}{0pt}
 % Ensure that the period is added after each section and subsection title. Adjust the spacing of section and
 % subsection titles
 \newcommand{\addperiod}[1]{#1.}
@@ -64,11 +66,8 @@
 \usepackage{textcomp}
 
 \setlength{\parindent}{0.4cm}
+\setlength{\parskip}{0mm}
 
- \setlength{\parskip}{0mm}
- \let\oldbibliography\thebibliography
-\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
-\setlength{\itemsep}{0pt}} %Reducing spacing in the bibliography.
 \renewcommand\refname{Bibliografia}
 
 %----------------------------------------------------------------------------------------
@@ -226,18 +225,13 @@ Z~powodu mnogości istniejących zastosowań dla~sieci splotowych oraz prawdopod
 
 W~ramach swojej pracy magisterskiej stworzyłem głęboką splotową sieć neuronową realizującą wymienione zadanie referencyjne. Ze~względu na~niewielką moc obliczeniową urządzeń, z~których mogłem korzystać, posłużyłem się~bazą CIFAR-10. Pozwoliło to~zbadać wpływ różnych parametrów sieci na~jakość uczenia i~klasyfikacji. Badano między innymi zachowanie sieci z~różnymi algorytmami normalizacji, różnymi modelami neuronu oraz przedstawiono proces ulepszania sieci poprzez zmianę jej architektury. Wiedza ta pozwala konstruowanie większych sieci, w~celu realizacji bardziej złożonych obliczeniowo zadań rozpoznawania obrazów.
 
-\vfill
 %----------------------------------------------------------------------------------------
 % REFERENCE LIST
 %----------------------------------------------------------------------------------------
 \raggedright
-
-
 \bibliography{bibliography}{}
 \bibliographystyle{unsrt}
-
 %----------------------------------------------------------------------------------------
 
 \end{multicols}
-
 \end{document}
