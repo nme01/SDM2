@@ -35,7 +35,9 @@
 \usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{float} % Required for tables and figures in the multi-column environment
-\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage[hidelinks]{hyperref} % For hyperlinks in the PDF
+\urlstyle{same}
 
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
 \usepackage{amsmath}
@@ -43,8 +45,9 @@
 \usepackage{titlesec} % Allows customization of titles
 \usepackage[labelsep=period,font=small,format=plain,labelfont=bf,textfont=up]{caption}
 
+% Ensure that the period is added after each section and subsection title. Adjust the spacing of section and
+% subsection titles
 \newcommand{\addperiod}[1]{#1.}
-
 %\titleformat{command}[shape]{format}{label}{sep}{before-code}{after-code}
 \titleformat{\section}[runin]{\bfseries\centering}{\thesection.}{3pt}{\addperiod} % Change the look of the section titles
 \titleformat{\subsection}[runin]{\bfseries}{\thesubsection.}{3pt}{\addperiod} % Change the look of the section titles
@@ -65,7 +68,7 @@
 % TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\fontsize{14pt}{10pt}\selectfont\textbf{Metody głębokiego uczenia w~rozpoznawaniu obrazów}} % Article title
+\title{\fontsize{14pt}{10pt}\vspace{3.55mm}\selectfont\textbf{Metody głębokiego uczenia w~rozpoznawaniu obrazów}} % Article title
 
 \author{
 {\fontsize{12pt}{1.2em}\selectfont Jacek Witkowski} \\
@@ -153,6 +156,7 @@ Tym~samym ostatnia z~popularnych gier planszowych straciła mistrza ludzkiego na
 \section{Sieci neuronowe}
 Jednym z~mechanizmów, który jest najczęściej wykorzystywany do~implementacji Sztucznej Inteligencji, jest sztuczna sieć neuronowa. Jest ona~inspirowana sieciami neuronowymi występującymi w~biologii (np.~w~ludzkim organizmie, w~szczególności: w~mózgu). Na~strukturę sieci składają się~pojedyncze połączone ze~sobą elementy, zwane neuronami. Budowa neuronu została przedstawiona na~rysunku \ref{fig:hebb-neuron}.
 \begin{figure}[H]
+	\centering
 	\includegraphics[width=0.9\linewidth, keepaspectratio]{img/sigmoid-neuron.png}
 	\vspace{-2mm}
 	\caption{Neuron Hebba.}
@@ -219,6 +223,8 @@ W~ramach swojej pracy magisterskiej stworzyłem głęboką splotową sieć neuro
 %----------------------------------------------------------------------------------------
 % REFERENCE LIST
 %----------------------------------------------------------------------------------------
+\raggedright
+
 \bibliography{bibliography}{}
 \bibliographystyle{unsrt}
 
