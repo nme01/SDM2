@@ -117,10 +117,11 @@ W~\textbf{uczeniu nienadzorowanym} w~procesie uczenia dostarczane są~jedynie da
 Oba rodzaje uczenia mogą być łączone. W~ten sposób działa również mózg człowieka. By~zobrazować omawiane podejście, warto posłużyć się~przykładem. Wyobraźmy sobie, że~ktoś chce nas nauczyć rozpoznawać różne rodzaje jabłek. Najprostszym podejściem byłoby pokazywanie nam wielu jabłek wraz z~opisem wskazującym jakiego rodzaju jest każde z~nich. Byłoby to~jednak bardzo czasochłonne, gdyż~zaprezentowanie każdego jabłka wymagałoby przygotowania dla~niego odpowiedniego opisu. Łatwiejszym sposobem byłoby zamknięcie nas w~pokoju z~wieloma nieopisanymi jabłkami. Wówczas zaczęlibyśmy oglądać każde z~nich i~po~pewnym czasie zauważylibyśmy różne cechy powtarzające się~na~niektórych jabłkach (np.~podłużny kształt, czerwony kolor, zielony kolor, zielone plamki itp.). Po~wyjściu z~pokoju potrafilibyśmy identyfikować cechy występujące w~różnych grupach jabłek. Wiedza ta~pozwoliłaby nam na~nauczenie się~rozpoznawania różnych gatunków na~podstawie mniejszej liczby opisanych przykładów niż~przy~podejściu naiwnym, gdzie od~początku stosowane jest uczenie nadzorowane.
 
 \section{Przykłady zastosowań}
-By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój Uczenia Maszynowego, warto poznać zastosowania, jakie~znajduje ta~dziedzina już teraz. Jednym z~nich jest zastosowanie Splotowej~Sieci~Neuronowej (\textit{\mbox{ang.~Convolutional} Neural Network, CNN}) do~oceniania atrakcyjności zdjęć ,,selfie'' \cite{SelfieCNN}. Autor algorytmu, potencjalnie bardzo przydatnego dla~wszystkich miłośników autofotografii, to~Andrej Karpathy. W~omawianym projekcie autor:
+\subsection{Ocena atrakcyjności zdjęć}
+By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój Uczenia Maszynowego, warto poznać zastosowania, jakie~znajduje ta~dziedzina już teraz. Jednym z~nich jest zastosowanie Głębokiej Splotowej Sieci Neuronowej (\textit{\mbox{ang.~Convolutional} Neural Network, CNN}) do~oceniania atrakcyjności zdjęć ,,selfie'' \cite{SelfieCNN}. W~omawianym projekcie autor:
 \begin{compactenum}
-	\item Wykorzystał zdjęcia, które oznaczone były hasz-tagiem ,,selfie'' (znalazł około 5 milionów takich zdjęć).
-	\item Przy~użyciu innej sieci splotowej wybrał tylko te~zdjęcia, na~których obecna była przynajmniej jedna twarz (zostało około 2~milionów zdjęć).
+	\item Zgromadził zdjęcia, które oznaczone były hasz-tagiem ,,selfie'' (znalazł około 5 milionów takich zdjęć).
+	\item Przy~użyciu mechanizmu rozpoznającego twarze na~obrazkach wybrał tylko te~zdjęcia, na~których obecna była przynajmniej jedna twarz (zostało około 2~milionów zdjęć).
 	\item Posortował fotografie względem liczby użytkowników obserwujących autora danego zdjęcia.
 	\item Podzielił posortowaną listę fotografii na~grupy po~100 zdjęć (każda grupa dzięki temu zawierała zdjęcia o~podobnej liczbie obserwujących danego użytkownika).
 	\item W~obrębie każdej grupy, utworzył ranking zdjęć na~podstawie ich liczby polubień. Górna połowa zdjęć była uznawana za~zdjęcia dobre, a~dolna~-~za~złe.
@@ -128,9 +129,11 @@ By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój Uczen
 \end{compactenum}
 Tak~utworzona Splotowa Sieć Neuronowa była w~stanie ocenić prawdopodobieństwo, że~dane ,,selfie'' jest atrakcyjne (im~wynik na~wyjściu sieci był wyższy, tym~zdjęcie było lepiej oceniane).
 
-Innym przykładem zastosowania Uczenia Maszynowego jest projekt Image Super Resolution \cite{SuperResolution} autorstwa Davida Garciiego. W~swojej aplikacji użył on~głębokiego uczenia w~celu czterokrotnego powiększania obrazków: z~rozmiaru 16x16 pikseli do~64x64 piksele. Porównanie wyników działania sieci neuronowej oraz interpolacji bikubicznej (standardowej metody stosowanej do~powiększania obrazów w~programach graficznych) zostały przedstawione na~rysunku \ref{fig:superresolution}.
-Architektura zastosowana w~projekcie to~DCGAN (\textit{ang. Deep Convolutional Generative Adversarial Network}, Głęboka Generatywna Antagonistyczna Sieć Splotowa \cite{DBLP:journals/corr/RadfordMC15}) wykorzystująca uczenie nienadzorowane.
-W~uproszczeniu: autor mechanizmu w~procesie uczenia podawał obrazki przedstawiające twarze. Sieć nauczyła się~wówczas jakie są~najczęstsze zależności pomiędzy pikselami występujące w~tych obrazkach, a~więc mogła również generować twarze. Następnie autor zastosował kolejny etap uczenia, w~którym jako funkcję błędu wykorzystał odległość L1 pomiędzy wynikiem powiększania obrazka przez~sieć, a~oryginalnym obrazkiem o~rozmiarze 64x64 piksele. Było to~uczenie nadzorowane.
+\subsection{Image Super Resolution}
+Innym przykładem zastosowania Uczenia Maszynowego jest projekt Image Super Resolution \cite{SuperResolution}. W~swojej aplikacji autor użył Sztucznej Inteligencji w~celu czterokrotnego powiększania obrazków: z~rozmiaru 16x16 pikseli do~64x64 piksele. Porównanie wyników działania sieci neuronowej oraz interpolacji bikubicznej (standardowej metody stosowanej do~powiększania obrazów w~programach graficznych) zostały przedstawione na~rysunku \ref{fig:superresolution}.
+Architektura zastosowana w~projekcie to~DCGAN (\textit{ang. Deep Convolutional Generative Adversarial Network}, Głęboka Generatywna Antagonistyczna Sieć Splotowa \cite{DBLP:journals/corr/RadfordMC15}). Wykorzystuje ona uczenie nienadzorowane.
+W~uproszczeniu: autor mechanizmu w~procesie uczenia używał obrazków przedstawiających twarze. Sieć nauczyła się~wówczas jakie są~najczęstsze zależności pomiędzy pikselami występujące w~tych obrazkach, a~więc mogła również generować twarze.
+Etap ten był uczeniem nienadzorowanym. Następnie autor zastosował kolejny uczenie nadzorowane, w~którym jako funkcję błędu wykorzystał odległość L1 pomiędzy wynikiem powiększania obrazka przez~sieć, a~oryginalnym obrazkiem o~rozmiarze 64x64 piksele. Odległość L1 (inaczej odległość Manhattan) jest zdefiniowana jako suma różnic odpowiadających sobie współrzędnych dwóch wektorów, tj. $\sum\limits_{i=0}^n (x_i - y_i)$, gdzie $n$ to~liczba współrzędnych (w~tym wypadku: liczba pikseli pomnożona przez~liczbę kanałów, która dla~obrazu kolorowego jest równa 3), a~$x$ i~$y$ to~porównywane obrazki.
 
 \begin{figure}[H]
 	\centering
@@ -209,9 +212,10 @@ Z~powodu mnogości istniejących zastosowań dla~sieci splotowych oraz potencjal
 %----------------------------------------------------------------------------------------
 % REFERENCE LIST
 %----------------------------------------------------------------------------------------
-
+\begin{flushleft}
 \bibliography{bibliography}{}
 \bibliographystyle{unsrt}
+\end{flushleft}
 
 %----------------------------------------------------------------------------------------
 
