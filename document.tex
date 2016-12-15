@@ -36,8 +36,15 @@
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{float} % Required for tables and figures in the multi-column environment
 
-\usepackage[hidelinks]{hyperref} % For hyperlinks in the PDF
+\usepackage{ragged2e} % better justification than a standard one
+
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage[hidelinks, breaklinks]{hyperref} % For hyperlinks in the PDF
 \urlstyle{same}
+\hypersetup{breaklinks=true}
+\Urlmuskip=0mu plus 1mu\relax
+\def\UrlBreaks{\do\/\do-}
 
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
 \usepackage{amsmath}
@@ -224,6 +231,7 @@ W~ramach swojej pracy magisterskiej stworzyłem głęboką splotową sieć neuro
 % REFERENCE LIST
 %----------------------------------------------------------------------------------------
 \raggedright
+
 
 \bibliography{bibliography}{}
 \bibliographystyle{unsrt}
