@@ -70,9 +70,7 @@
 
 \renewcommand\refname{Bibliografia}
 
-%----------------------------------------------------------------------------------------
 % TITLE SECTION
-%----------------------------------------------------------------------------------------
 
 \title{\fontsize{14pt}{10pt}\vspace{3.55mm}\selectfont\textbf{Metody głębokiego uczenia w~rozpoznawaniu obrazów}} % Article title
 
@@ -85,15 +83,12 @@
 }
 
 
-%----------------------------------------------------------------------------------------
 \frenchspacing
 \begin{document}
 
 \maketitle % Insert title
 
-%----------------------------------------------------------------------------------------
 % ARTICLE CONTENTS
-%----------------------------------------------------------------------------------------
 
 \begin{multicols}{2} % Two-column layout throughout the main article text
 
@@ -101,18 +96,18 @@
 \section*{Streszczenie}
 
 \textit{
-W~artykule zwrócono uwagę na~dynamiczny rozwój Sztucznej~Inteligencji w~ostatnich czasach. Następnie objaśniono różnice pomiędzy uczeniem nadzorowanym i~nienadzorowanym oraz zaprezentowano przykładowe zastosowania Uczenia Maszynowego we~współczesnym świecie. Omówiono również temat sztucznych sieci neuronowych: ich~budowę oraz zasadę działania. Następnie wyjaśniono czym jest uczenie głębokie. Kolejno, zaprezentowano szczególny przypadek sieci neuronowej, jakim jest sieć splotowa. Wyjaśniono, w jaki sposób jest ona wykorzystywana do~rozpoznawania obiektów znajdujących się~na~obrazach. Zaznaczono również, że~zagadnienie to~jest tematem pracy magisterskiej autora artykułu.
+W~artykule zwrócono uwagę na~dynamiczny rozwój sztucznej~inteligencji w~ostatnich czasach. Następnie objaśniono różnice pomiędzy uczeniem nadzorowanym i~nienadzorowanym oraz zaprezentowano przykładowe zastosowania uczenia maszynowego we~współczesnym świecie. Omówiono również temat sztucznych sieci neuronowych: ich~budowę oraz zasadę działania. Następnie wyjaśniono czym jest uczenie głębokie. Kolejno, zaprezentowano szczególny przypadek sieci neuronowej, jakim jest sieć splotowa. Wyjaśniono, w jaki sposób jest ona wykorzystywana do~rozpoznawania obiektów znajdujących się~na~obrazach. Zaznaczono również, że~zagadnienie to~jest tematem pracy magisterskiej autora artykułu.
 }
 
 \section{Motywacja}
-Ostatnimi czasy Sztuczna Inteligencja jest wykorzystywana w~coraz większej liczbie obszarów. Zaczyna ona być obecna nawet w~urządzeniach codziennego użytku. Szybki rozwój Uczenia Maszynowego, czyli dziedziny zajmującej się badaniem Sztucznej Inteligencji, stał się~możliwy dzięki osiągnięciu znacznych mocy obliczeniowych komputerów. Pozwoliło to~na~stosowanie zaawansowanych algorytmów, które kiedyś były jedynie przedmiotem rozważań teoretycznych.
+Ostatnimi czasy sztuczna inteligencja jest wykorzystywana w~coraz większej liczbie obszarów. Zaczyna ona być obecna nawet w~urządzeniach codziennego użytku. Szybki rozwój uczenia maszynowego, czyli dziedziny zajmującej się badaniem sztucznej inteligencji, stał się~możliwy dzięki osiągnięciu znacznych mocy obliczeniowych komputerów. Pozwoliło to~na~stosowanie zaawansowanych algorytmów, które kiedyś były jedynie przedmiotem rozważań teoretycznych.
 
-Biorąc pod~uwagę to,~że Sztuczna Inteligencja może być stosowana w~prawie każdej dziedzinie nauki, warto zgłębić wiedzę na~temat najnowszych osiągnięć związanych z~Uczeniem Maszynowym. W~przeciągu ostatnich 5~lat wyjątkowo szybko rozwijały się~algorytmy służące do~rozpoznawania obrazów. Prawdopodobnie było to spowodowane tym, że~jest to~obszar, w~którym można znaleźć wiele zastosowań dla~Sztucznej Inteligencji.
+Biorąc pod~uwagę to,~że sztuczna inteligencja może być stosowana w~prawie każdej dziedzinie nauki, warto zgłębić wiedzę na~temat najnowszych osiągnięć związanych z~uczeniem maszynowym. W~przeciągu ostatnich 5~lat wyjątkowo szybko rozwijały się~algorytmy służące do~rozpoznawania obrazów. Prawdopodobnie było to spowodowane tym, że~jest to~obszar, w~którym można znaleźć wiele zastosowań dla~sztucznej inteligencji.
 
 Jednym z~mechanizmów najczęściej wykorzystywanych do~rozpoznawania obrazów oraz materiałów wideo jest tzw.~sieć splotowa, która zostanie dokładniej omówiona w~dalszej części artykułu.
 
 \section{Uczenie nadzorowane i nienadzorowane}
-Mechanizmy Sztucznej Inteligencji można podzielić na:
+Mechanizmy sztucznej inteligencji można podzielić na:
 \begin{compactitem}
 	\item uczenie nadzorowane,
 	\item uczenie nienadzorowane.
@@ -127,7 +122,7 @@ Oba rodzaje uczenia mogą być łączone. W~ten sposób działa również mózg 
 
 \section{Przykłady zastosowań}
 \subsection{Ocena atrakcyjności zdjęć}
-By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój Uczenia Maszynowego, warto poznać zastosowania, jakie~znajduje ta~dziedzina już teraz. Jednym z~nich jest zastosowanie Głębokiej Splotowej Sieci Neuronowej (\textit{\mbox{ang.~Convolutional} Neural Network, CNN}) do~oceniania atrakcyjności zdjęć ,,selfie'' \cite{SelfieCNN}. W~omawianym projekcie autor:
+By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój uczenia maszynowego, warto poznać zastosowania, jakie~znajduje ta~dziedzina już teraz. Jednym z~nich jest zastosowanie Głębokiej Splotowej Sieci Neuronowej (\textit{\mbox{ang.~Convolutional} Neural Network, CNN}) do~oceniania atrakcyjności zdjęć typu ,,selfie'' \cite{SelfieCNN}. W~omawianym projekcie autor:
 \begin{compactenum}
 	\item Zgromadził zdjęcia, które oznaczone były hasz-tagiem ,,selfie'' (znalazł około 5 milionów takich zdjęć).
 	\item Przy~użyciu mechanizmu rozpoznającego twarze na~obrazkach wybrał tylko te~zdjęcia, na~których obecna była przynajmniej jedna twarz (zostało około 2~milionów zdjęć).
@@ -136,10 +131,10 @@ By~lepiej zrozumieć, jakie możliwości otwiera przed~nami obecny rozwój Uczen
 	\item W~obrębie każdej grupy, utworzył ranking zdjęć na~podstawie ich liczby polubień. Górna połowa zdjęć była uznawana za~zdjęcia dobre, a~dolna~-~za~złe.
 	\item Trenował sieć neuronową milionem zdjęć dobrych oraz milionem zdjęć złych. Dzięki temu mechanizm nauczył się~odróżniać oba typy zdjęć.
 \end{compactenum}
-Tak~utworzona Splotowa Sieć Neuronowa była w~stanie ocenić prawdopodobieństwo, że~dane ,,selfie'' jest atrakcyjne (im~wynik na~wyjściu sieci był wyższy, tym~zdjęcie było lepiej oceniane).
+Tak~utworzona splotowa sieć neuronowa była w~stanie ocenić prawdopodobieństwo, że~dane zdjęcie jest atrakcyjne (im~wynik na~wyjściu sieci był wyższy, tym~zdjęcie było lepiej oceniane).
 
 \subsection{Image Super Resolution}
-Innym przykładem zastosowania Uczenia Maszynowego jest projekt Image Super Resolution \cite{SuperResolution}. W~swojej aplikacji autor użył Sztucznej Inteligencji w~celu czterokrotnego powiększania obrazków: z~rozmiaru 16x16 pikseli do~64x64 piksele. Porównanie wyników działania sieci neuronowej oraz interpolacji bikubicznej (standardowej metody stosowanej do~powiększania obrazów w~programach graficznych) zostały przedstawione na~rysunku \ref{fig:superresolution}.
+Innym przykładem zastosowania uczenia maszynowego jest projekt Image Super Resolution \cite{SuperResolution}. W~swojej aplikacji autor użył sztucznej inteligencji w~celu czterokrotnego powiększania obrazków: z~rozmiaru 16x16 pikseli do~64x64 piksele. Porównanie wyników działania sieci neuronowej oraz interpolacji bikubicznej (standardowej metody stosowanej do~powiększania obrazów w~programach graficznych) zostały przedstawione na~rysunku \ref{fig:superresolution}.
 Architektura zastosowana w~projekcie to~DCGAN (\textit{ang. Deep Convolutional Generative Adversarial Network}, Głęboka Generatywna Antagonistyczna Sieć Splotowa \cite{DBLP:journals/corr/RadfordMC15}). Wykorzystuje ona uczenie nienadzorowane.
 W~uproszczeniu: autor mechanizmu w~procesie uczenia używał obrazków przedstawiających twarze. Sieć nauczyła się~wówczas jakie są~najczęstsze zależności pomiędzy pikselami występujące w~tych obrazkach, a~więc mogła również generować twarze.
 Etap ten był uczeniem nienadzorowanym. Następnie autor zastosował kolejny uczenie nadzorowane, w~którym jako funkcję błędu wykorzystał odległość L1 pomiędzy wynikiem powiększania obrazka przez~sieć, a~oryginalnym obrazkiem o~rozmiarze 64x64 piksele. Odległość L1 (inaczej odległość Manhattan) jest zdefiniowana jako suma różnic odpowiadających sobie współrzędnych dwóch wektorów, tj.~$\sum\limits_{i=0}^n (x_i - y_i)$, gdzie $n$ to~liczba współrzędnych (w~tym wypadku: liczba pikseli pomnożona przez~liczbę kanałów, która dla~obrazu kolorowego jest równa 3), a~$x$ i~$y$ to~porównywane obrazki.
@@ -153,14 +148,14 @@ Etap ten był uczeniem nienadzorowanym. Następnie autor zastosował kolejny ucz
 \end{figure}
 \vspace{-0.3cm}
 \subsection{AlphaGO}
-Do~bardziej zaawansowanych Sztucznych Inteligencji należy projekt ,,AlphaGo''\cite{AlphaGO} stworzony przez~firmę Google~DeepMind. Owa~Sztuczna Inteligencja nauczyła się~grać w~starochińską grę planszową~-~Go. Mechanizm wyróżnia to,~że~może być wykorzystany do~różnych celów (np.~może nauczyć się~grać w~inne gry) i~nie~był tworzony pod~z~góry określone zastosowanie, w~przeciwieństwie do~mechanizmów takich jak: IBM~Watson czy~IBM~Deep~Blue. Silnik stworzony przez~firmę~---~DeepMind~---~jako~dane wejściowe przyjmuje obraz w~postaci mapy bitowej, a~następnie do~jego przetwarzania wykorzystuje głębokie splotowe sieci neuronowe (opisane w~dalszej części artykułu) oraz Q-learning (szczególny rodzaj uczenia ze~wzmocnieniem).
+Do~bardziej zaawansowanych sztucznych inteligencji należy projekt ,,AlphaGo''\cite{AlphaGO} stworzony przez~firmę Google~DeepMind. Owa~sztuczna inteligencja nauczyła się~grać w~starochińską grę planszową~-~Go. Mechanizm wyróżnia to,~że~może być wykorzystany do~różnych celów (np.~może nauczyć się~grać w~inne gry) i~nie~był tworzony pod~z~góry określone zastosowanie, w~przeciwieństwie do~mechanizmów takich jak: IBM~Watson czy~IBM~Deep~Blue. Silnik stworzony przez~firmę Google DeepMind jako~dane wejściowe przyjmuje obraz w~postaci mapy bitowej, a~następnie do~jego przetwarzania wykorzystuje głębokie splotowe sieci neuronowe (opisane w~dalszej części artykułu) oraz Q-learning (szczególny rodzaj uczenia ze~wzmocnieniem).
 
-Program AlphaGo jest przełomowy również pod~innym względem: jest pierwszą Sztuczną Inteligencją, która~pokonała profesjonalnego gracza w~Go \cite{FanHuiGO} na~pełnowymiarowej planszy (19x19) bez~zastosowania tzw.~handicapu. Pojedynek odbył się~w~październiku~2015 roku. Niedługo potem, w~marcu~2016 roku, AlphaGo zdołał pokonać, 18-krotnego i~również ówczesnego mistrza świata w~grę~Go \cite{LeeSedolGO}.
+Program AlphaGo jest przełomowy również pod~innym względem: jest pierwszą sztuczną inteligencją, która~pokonała profesjonalnego gracza w~Go \cite{FanHuiGO} na~pełnowymiarowej planszy (19x19) bez~zastosowania tzw.~handicapu. Pojedynek odbył się~w~październiku~2015 roku. Niedługo potem, w~marcu~2016 roku, AlphaGo zdołał pokonać, 18-krotnego i~również ówczesnego mistrza świata w~grę~Go \cite{LeeSedolGO}.
 
 Tym~samym ostatnia z~popularnych gier planszowych straciła mistrza ludzkiego na~rzecz programu komputerowego (podobnie jak~wcześniej warcaby\cite{checkersSolved} czy~szachy\cite{newborn1997kasparov}).
 
 \section{Sieci neuronowe}
-Jednym z~mechanizmów, który jest najczęściej wykorzystywany do~implementacji Sztucznej Inteligencji, jest sztuczna sieć neuronowa. Jest ona~inspirowana sieciami neuronowymi występującymi w~biologii (np.~w~ludzkim organizmie, w~szczególności: w~mózgu). Na~strukturę sieci składają się~pojedyncze połączone ze~sobą elementy, zwane neuronami. Budowa neuronu została przedstawiona na~rysunku \ref{fig:hebb-neuron}.
+Jednym z~mechanizmów, który jest najczęściej wykorzystywany do~implementacji sztucznej inteligencji, jest sztuczna sieć neuronowa. Jest ona~inspirowana sieciami neuronowymi występującymi w~biologii (np.~w~ludzkim organizmie, w~szczególności: w~mózgu). Na~strukturę sieci składają się~pojedyncze połączone ze~sobą elementy, zwane neuronami. Budowa neuronu została przedstawiona na~rysunku \ref{fig:hebb-neuron}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth, keepaspectratio]{img/sigmoid-neuron.png}
@@ -204,7 +199,7 @@ Sieci splotowe wykorzystują to,~że~odpowiednio dobierając wartości maski, mo
 
 Standardowym zadaniem, do~którego wykorzystywane są~splotowe sieci neuronowe, jest identyfikacja obiektu obecnego na~zdjęciu. Algorytm przetwarzania obrazu dzieli się~na~etapy:
 \begin{compactenum}
-	\item Splot~-~zastosowanie $n$~różnych filtrów splotowych, wynikiem czego jest $n$~obrazków zwanych mapami cech.
+	\item Splot: zastosowanie $n$~różnych filtrów splotowych, wynikiem czego jest $n$~obrazków zwanych mapami cech.
 	\item Normalizacja (krok opcjonalny, mający na~celu taką zmianę danych, która poprawi jakość uczenia sieci). Krok ten wyjaśniono w~dalszej części artykułu).
 	\item Próbkowanie (zmniejszenie rozmiarów powstałych map cech, m.in.~w~celu redukcji rozmiaru przetwarzanych danych).
 	\item Powtórzenie kroków 1-3 wiele razy (liczba powtórzeń jest zależna od~liczby warstw w~sieci).
@@ -219,9 +214,9 @@ Splotowe sieci neuronowe szczególnie często są~wykorzystywane do~przetwarzani
 Jest to~spowodowane tym, że~mogą one operować na~danych wielowymiarowych (tj.~obrazach czy filmach), a~przy tym potrafią znajdywać lokalne cechy występujące w~sygnale (np.~człowiek może pojawiać się~w~różnych miejscach na~zdjęciu, a~sieć zawsze będzie w~stanie określić, że~fotografia przedstawia człowieka).
 
 \section{Podsumowanie}
-Z~powodu gwałtownego wzrostu mocy obliczeniowej w~ciągu ostatnich 10~lat znacząco zwiększyły się~możliwości mechanizmów wykorzystujących Sztuczną Inteligencję. Wciąż rośnie liczba obszarów, w~których Uczenie Maszynowe znajduje zastosowania: od~automatycznych tłumaczeń tekstów, poprzez samosterujące się~pojazdy, gry planszowe oraz komputerowe, medycynę, aż~do~wszelkiego rodzaju zagadnień związanych z~obróbką obrazów czy~materiałów wideo. Ostatnie~z~wymienionych zastosowań (przetwarzanie materiałów graficznych oraz audio-wizualnych) szczególnie często wykorzystuje głębokie sieci splotowe, czyli specyficzny rodzaj sieci neuronowych, składających się~z~wielu warstw, wykorzystujących filtry splotowe do~osiągania założonych celów (np.~identyfikacji obiektów znajdujących się~na~zdjęciach czy~wręcz tworzenia opisów tych obrazów w~języku naturalnym).
+Z~powodu gwałtownego wzrostu mocy obliczeniowej w~ciągu ostatnich 10~lat znacząco zwiększyły się~możliwości mechanizmów wykorzystujących sztuczną inteligencję. Wciąż rośnie liczba obszarów, w~których uczenie maszynowe znajduje zastosowania: od~automatycznych tłumaczeń tekstów, poprzez samosterujące się~pojazdy, gry planszowe oraz komputerowe, medycynę, aż~do~wszelkiego rodzaju zagadnień związanych z~obróbką obrazów czy~materiałów wideo. Ostatnie~z~wymienionych zastosowań (przetwarzanie materiałów graficznych oraz audio-wizualnych) szczególnie często wykorzystuje głębokie sieci splotowe, czyli specyficzny rodzaj sieci neuronowych, składających się~z~wielu warstw, wykorzystujących filtry splotowe do~osiągania założonych celów (np.~identyfikacji obiektów znajdujących się~na~zdjęciach czy~wręcz tworzenia opisów tych obrazów w~języku naturalnym).
 
-Z~powodu mnogości istniejących zastosowań dla~sieci splotowych oraz prawdopodobnie wielu dziedzin wciąż czekających na~wsparcie ze~strony mechanizmów tego rodzaju, warto zgłębić tę~szczególną gałąź Uczenia Maszynowego. Zadaniem referencyjnym, które jest często wykorzystywane do~badań nad~sieciami splotowymi jest identyfikacja przedmiotów przedstawionych na~obrazkach. Istnieją również bazy opisanych etykietami zdjęć takie jak CIFAR-10 i CIFAR-100\cite{cifar10and100} czy~ImageNet\cite{imagenet}, które mogą posłużyć jako~zbiór danych treningowych i~testowych. 
+Z~powodu mnogości istniejących zastosowań dla~sieci splotowych oraz prawdopodobnie wielu dziedzin wciąż czekających na~wsparcie ze~strony mechanizmów tego rodzaju, warto zgłębić tę~szczególną gałąź uczenia maszynowego. Zadaniem referencyjnym, które jest często wykorzystywane do~badań nad~sieciami splotowymi jest identyfikacja przedmiotów przedstawionych na~obrazkach. Istnieją również bazy opisanych etykietami zdjęć takie jak CIFAR-10 i CIFAR-100\cite{cifar10and100} czy~ImageNet\cite{imagenet}, które mogą posłużyć jako~zbiór danych treningowych i~testowych. 
 
 W~ramach swojej pracy magisterskiej stworzyłem głęboką splotową sieć neuronową realizującą wymienione zadanie referencyjne. Ze~względu na~niewielką moc obliczeniową urządzeń, z~których mogłem korzystać, posłużyłem się~bazą CIFAR-10. Pozwoliło to~zbadać wpływ różnych parametrów sieci na~jakość uczenia i~klasyfikacji. Badano między innymi zachowanie sieci z~różnymi algorytmami normalizacji, różnymi modelami neuronu oraz przedstawiono proces ulepszania sieci poprzez zmianę jej architektury. Wiedza ta pozwala konstruowanie większych sieci, w~celu realizacji bardziej złożonych obliczeniowo zadań rozpoznawania obrazów.
 
